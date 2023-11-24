@@ -176,10 +176,3 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 });
-
-
-window.onload = function() {
-  if (window.location.href.indexOf('moletom.html') > -1) {
-    document.querySelector('#titulo').innerText = 'Moletom';
-  }
-}
