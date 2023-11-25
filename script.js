@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
       if (imagemProduto) {
          
-          imagemProduto1.src =  "moletom/Moletom SPK CHAMBER.png";
+          imagemProduto1.src = "moletom/Moletom SPK CHAMBER.png";
           imagemProduto2.src = "moletom/Moletom SPK N1 BLACK.png";
           imagemProduto3.src = "moletom/Moletom SPK N1 WHITE.png";
           imagemProduto4.src = "moletom/Moletom SPK POP.png";
@@ -176,3 +176,24 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Verifica a largura da tela ao carregar a página
+  checkScreenWidth();
+
+  // Adiciona um ouvinte de redimensionamento da janela
+  window.addEventListener('resize', checkScreenWidth);
+});
+
+function checkScreenWidth() {
+  // Obtém a largura atual da tela
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  // Obtém a referência ao elemento header.slider
+  var sliderHeader = document.querySelector('header.slider');
+
+  // Se a largura da tela for menor ou igual a 768 pixels, remove o elemento
+  if (screenWidth <= 768 && sliderHeader) {
+      sliderHeader.parentNode.removeChild(sliderHeader);
+  }
+}
